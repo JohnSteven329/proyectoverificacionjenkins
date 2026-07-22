@@ -19,9 +19,7 @@ class CalculadoraTest {
     @Test
     @DisplayName("Debe sumar correctamente dos números enteros")
     void debeSumarDosNumeros() {
-        // Fallo provocado intencionalmente:
-        // 8 + 4 devuelve 12, pero esperamos 15.
-        assertEquals(15, calculadora.sumar(8, 4));
+        assertEquals(12, calculadora.sumar(8, 4));
     }
 
     @Test
