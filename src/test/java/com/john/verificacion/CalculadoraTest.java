@@ -19,7 +19,9 @@ class CalculadoraTest {
     @Test
     @DisplayName("Debe sumar correctamente dos números enteros")
     void debeSumarDosNumeros() {
-        assertEquals(12, calculadora.sumar(8, 4));
+        // Fallo provocado intencionalmente:
+        // 8 + 4 devuelve 12, pero esperamos 15.
+        assertEquals(15, calculadora.sumar(8, 4));
     }
 
     @Test
@@ -48,6 +50,9 @@ class CalculadoraTest {
                 () -> calculadora.dividir(10, 0)
         );
 
-        assertEquals("El divisor no puede ser cero", excepcion.getMessage());
+        assertEquals(
+                "El divisor no puede ser cero",
+                excepcion.getMessage()
+        );
     }
 }
