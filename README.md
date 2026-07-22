@@ -64,33 +64,3 @@ Los reportes XML que utilizará Jenkins se generan en:
 target/surefire-reports/*.xml
 ```
 
-## Subir a GitHub
-
-Dentro de la carpeta del proyecto:
-
-```bash
-git init
-git add .
-git commit -m "Proyecto Maven con pruebas JUnit"
-git branch -M main
-git remote add origin URL_DEL_REPOSITORIO
-git push -u origin main
-```
-
-Reemplazar `URL_DEL_REPOSITORIO` por la dirección del repositorio creado en GitHub.
-
-## Prueba fallida solicitada en la actividad
-
-Más adelante, para demostrar un fallo en Jenkins, se puede cambiar temporalmente esta línea:
-
-```java
-assertEquals(12, calculadora.sumar(8, 4));
-```
-
-por:
-
-```java
-assertEquals(15, calculadora.sumar(8, 4));
-```
-
-Después se sube el cambio, se ejecuta Jenkins y se toma la captura del fallo. Finalmente, se restaura el valor correcto `12`.
